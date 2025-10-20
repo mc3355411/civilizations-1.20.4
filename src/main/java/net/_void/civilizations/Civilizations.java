@@ -10,6 +10,8 @@ import net._void.civilizations.item.ModItems;
 import net._void.civilizations.networking.ModMessages;
 import net._void.civilizations.screen.ModScreenHandlers;
 import net._void.civilizations.sound.ModSounds;
+import net._void.civilizations.stats.ModStats;
+import net._void.civilizations.util.ModGamerules;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -30,6 +32,8 @@ public class Civilizations implements ModInitializer {
 		ModEffects.registerEffects();
 		ModSounds.registerSounds();
 		ModMessages.registerC2SPackets();
+		ModGamerules.initialize();
+		ModStats.registerModStats();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.EGYPT_CIVILIAN, EgyptCivilianEntity.createCivilianAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.EGYPT_NPC, EgyptNpcEntity.createNpcAttributes());

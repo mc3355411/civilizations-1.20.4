@@ -3,7 +3,8 @@
 	"package": "net._void.civilizations.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"TombstoneMixin"
+		"TombstoneMixin",
+        "RomeSwordMixin"
 	],
 	"client": [
 		"ItemRendererAccessor",

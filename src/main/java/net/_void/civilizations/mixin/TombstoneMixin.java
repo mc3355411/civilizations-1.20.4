@@ -3,6 +3,7 @@ package net._void.civilizations.mixin;
 
 import net._void.civilizations.block.ModBlocks;
 import net._void.civilizations.block.entity.TombstoneBlockEntity;
+import net._void.civilizations.util.ModGamerules;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -24,7 +25,7 @@ public abstract class TombstoneMixin{
         Inventory inv = player.getInventory();
         BlockPos pos = player.getBlockPos();
         World world = player.getWorld();
-        if(!world.getGameRules().getBoolean(GameRules.KEEP_INVENTORY)){
+        if(!world.getGameRules().getBoolean(GameRules.KEEP_INVENTORY) && world.getGameRules().getBoolean(ModGamerules.TOMBSTONE_ON_DEATH)){
             BlockState stateInBlock = world.getBlockState(pos);
             BlockState state = stateInBlock.isOf(ModBlocks.TOMBSTONE) ? stateInBlock : ModBlocks.TOMBSTONE.getDefaultState();
             world.setBlockState(pos, state);
