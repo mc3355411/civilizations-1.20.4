@@ -20,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class TombstoneMixin {
     @Inject(at = @At(value = "HEAD"), method = "onDeath")
     private void onPlayerDeath(DamageSource source, CallbackInfo info) {
+        /*
         ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
         Inventory inv = player.getInventory();
         BlockPos pos = player.getBlockPos();
