@@ -1,6 +1,5 @@
 package net._void.civilizations.mixin;
 
-
 import net._void.civilizations.block.ModBlocks;
 import net._void.civilizations.block.entity.TombstoneBlockEntity;
 import net._void.civilizations.util.ModGamerules;
@@ -18,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ServerPlayerEntity.class)
-public abstract class TombstoneMixin{
+public abstract class TombstoneMixin {
     @Inject(at = @At(value = "HEAD"), method = "onDeath")
     private void onPlayerDeath(DamageSource source, CallbackInfo info) {
         ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
@@ -37,6 +36,7 @@ public abstract class TombstoneMixin{
                 player.getInventory().clear();
             }
         }
+        */
     }
 }
 
